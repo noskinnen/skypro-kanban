@@ -1,6 +1,6 @@
 import { useState } from "react";
 import * as HS from "./Header.styled";
-import Container from "../../styled/common/Common.style";
+import { Container } from "../../styled/common/Common.styled";
 
 function Header({ addCard }) {
   const [isOpened, setIsOpened] = useState(false);

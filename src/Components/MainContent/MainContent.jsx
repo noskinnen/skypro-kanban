@@ -1,4 +1,4 @@
-import { Container } from "../../styled/common/Common.style";
+import { Container } from "../../styled/common/Common.styled";
 
 function MainContent({children}) {
   return (
