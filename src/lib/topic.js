@@ -37,3 +37,9 @@ export const CardTopic = styled.div`
     color: ${({ $topicColor }) => topicStyles[$topicColor]?.color || "#06b16e"};
   }
 `;
+
+export const topicHeader = {
+  "Web Design": "_orange:",
+  "Research": "_green:",
+  "Copywriting": "_purple:",
+};

@@ -1,11 +1,14 @@
+import { topicHeader } from "../../lib/topic";
+import * as CS from "./Cards.styled";
+
 function Cards({topic, title, date}) {
   return (
     <div className="cards__item">
       <div className="cards__card card">
         <div className="card__group">
-          <div className="card__theme _orange">
-            <p className="_orange">{topic}</p>
-          </div>
+          <CS.CardTopic $themeColor = {topicHeader[topic]}>
+          <CS.TopicText>{topic}</CS.TopicText>
+          </CS.CardTopic>
           <a href="#popBrowse" target="_self">
             <div className="card__btn">
               <div />
