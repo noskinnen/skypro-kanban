@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import  styled  from "styled-components";
 import { topicStyles } from "../../lib/topic";
 
 export const TopicText = styled.p`
@@ -19,7 +19,6 @@ export const CardTopic = styled.div`
     color: ${({ $themeColor }) => topicStyles[$themeColor]?.color || "#ffffff"};
   }
 `;
-
 export const CardsItem = styled.div`
   padding: 5px;
   animation-name: card-animation;

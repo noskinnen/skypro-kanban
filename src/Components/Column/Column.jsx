@@ -1,17 +1,15 @@
-import Cards from "../Cards/Cards";
+import Card from "../Cards/Cards";
+import * as S from "./Column.styled";
 
-function Column({ title, cardList }) {
-  return (
-    <div className="main__column column">
-      <div className="column__title">
+function Column({title, cardList}) {
+    return (
+    <S.MainColumn>
+    <S.ColumnTitle>
         <p>{title}</p>
-      </div>
-      <div className="cards">
-        {cardList.map((card) => <Cards topic={card.theme} title={card.title} date={card.date} key={card.id} />)}
-
-      </div>
-    </div>
-  );
+    </S.ColumnTitle>
+    <S.Cards>
+        {cardList.map((card) => <Card theme={card.theme} cardTitle={card.title} date={card.date} key={card.id}/>)}
+    </S.Cards>
+</S.MainColumn>)
 }
-
-export default Column;
+export default  Column;
