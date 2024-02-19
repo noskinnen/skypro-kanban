@@ -1,8 +1,9 @@
 export const AppRoutes = {
     MAIN: "/",
-    NOT_FOUND: "*",
+    TASK: "/task/:id",
+    REGISTER: "/register",
+    LOGIN: "/login",
     EXIT: "/exit",
     CARD: "/card",
-    REGISTER: "/register",
-    LOGIN: "/login"
+    NOT_FOUND: "*"
 }

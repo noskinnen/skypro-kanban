@@ -8,7 +8,7 @@ function Column({title, cardList}) {
         <p>{title}</p>
     </S.ColumnTitle>
     <S.Cards>
-        {cardList.map((card) => <Card theme={card.theme} cardTitle={card.title} date={card.date} key={card.id}/>)}
+        {cardList.map((card) => <Card theme={card.theme} cardTitle={card.title} date={card.date} key={card.id} id={card._id} />)}
     </S.Cards>
 </S.MainColumn>)
 }
