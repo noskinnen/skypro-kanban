@@ -1,16 +1,6 @@
-import { WrapperItem } from "./Wrapper.styled"
+import { WrapperItem } from "./Wrapper.styled";
 
 function Wrapper({ children }) {
-    return (
-
-        <WrapperItem>
-
-
-
-            {children}
-
-        </WrapperItem>
-
-    )
+  return <WrapperItem>{children}</WrapperItem>;
 }
-export default Wrapper
+export default Wrapper;
