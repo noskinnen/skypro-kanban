@@ -1,13 +1,13 @@
 import { useEffect, useState } from "react";
-import { GlobalStyle } from "../../styled/common/Global.Styled.js";
-import { Wrapper } from "../components/Wrapper/Wrapper.jsx";
-import { Header } from "../components/Header/Header.jsx";
-import { MainContent } from "../components/MainContent/MainContent.jsx";
+import  GlobalStyle  from "../../styled/common/Global.Styled.js";
+import  Wrapper  from "../../Components/Wrapper/Wrapper.jsx";
+import  Header  from "../../Components/Header/Header.jsx";
+import  MainContent  from "../../Components/MainContent/MainContent.jsx";
 import "../App.css";
-import { Outlet } from "react-router-dom";
-import { getTasksApi } from "../../api.js";
-import { useUser } from "../../Hooks/useUser.jsx";
-import { useTasks } from "../../Hooks/useTasks.jsx";
+import  Outlet  from "react-router-dom";
+import  getTasksApi  from "../../api.js";
+import  useUser  from "../../Hooks/useUser.jsx";
+import  useTasks  from "../../Hooks/useTasks.jsx";
 
 export default function MainPage() {
   const { isLoggedInUser } = useUser();

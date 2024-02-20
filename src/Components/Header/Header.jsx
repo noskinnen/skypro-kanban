@@ -1,7 +1,7 @@
 import { useState } from "react";
 import * as HS from "./Header.styled";
 import { Container } from "../../styled/common/Common.styled";
-import { AppRoutes } from "../../lib/approutes";
+import  AppRoutes  from "../../lib/approutes.js";
 
 function Header({ addCard }) {
   const [isOpened, setIsOpened] = useState(false);
