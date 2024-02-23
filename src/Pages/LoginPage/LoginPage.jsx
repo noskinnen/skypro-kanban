@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { AppRoutes } from "../../lib/approutes.js";
+import { AppRoutes } from "../../lib/approutes";
 import { useState } from "react";
 import { loginUserApi } from "../../api.js";
 import { useUser } from "../../Hooks/useUser.jsx";

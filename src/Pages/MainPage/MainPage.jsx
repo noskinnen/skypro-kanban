@@ -1,13 +1,13 @@
 import { useEffect, useState } from "react";
-import  GlobalStyle  from "../../styled/common/Global.Styled.js";
-import  Wrapper  from "../../Components/Wrapper/Wrapper.jsx";
-import  Header  from "../../Components/Header/Header.jsx";
-import  MainContent  from "../../Components/MainContent/MainContent.jsx";
-import "../App.css";
-import  Outlet  from "react-router-dom";
-import  getTasksApi  from "../../api.js";
-import  useUser  from "../../Hooks/useUser.jsx";
-import  useTasks  from "../../Hooks/useTasks.jsx";
+import { GlobalStyle } from "../../styled/common/Global.Styled";
+import Header from "../../Components/Header/Header.jsx";
+import MainContent from "../../Components/MainContent/MainContent.jsx";
+import "../../App.css";
+import { Outlet } from "react-router-dom";
+import { WrapperItem } from "../../Components/Wrapper/Wrapper.styled.js";
+import { getTasksApi } from "../../api.js";
+import { useUser } from "../../Hooks/useUser.jsx";
+import { useTasks } from "../../Hooks/useTasks.jsx"
 
 export default function MainPage() {
   const { isLoggedInUser } = useUser();
@@ -30,7 +30,7 @@ export default function MainPage() {
   return (
     <>
       <GlobalStyle />
-      <Wrapper>
+      <WrapperItem>
         <Outlet />
         <Header user={isLoggedInUser} />
         {getCardsError ? (
@@ -38,7 +38,7 @@ export default function MainPage() {
         ) : (
           <MainContent isLoaded={getCardsIsLoaded} />
         )}
-      </Wrapper>
+      </WrapperItem>
     </>
   );
 }

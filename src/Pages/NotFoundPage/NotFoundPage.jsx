@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { GlobalStyle } from "../../styled/common/Global.Styled.js";
-import  AppRoutes  from "../../lib/approutes.js";
+import { AppRoutes } from "../../lib/approutes";
 import styled from "styled-components";
 
 const Item = styled.div`
