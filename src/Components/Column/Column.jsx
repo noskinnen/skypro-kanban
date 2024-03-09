@@ -1,4 +1,4 @@
-import Card from "../Card/Card";
+import Card from "../Cards/Cards";
 import * as S from "./Column.styled";
 
 function Column({title, cardList}) {

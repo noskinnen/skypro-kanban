@@ -1,21 +1,21 @@
 import "../../App.css";
-import { appRoutes } from "../../lib/appRoutes";
+import { appRoutes } from "../../lib/approutes";
 import { Link } from "react-router-dom";
-import { WrapperRegisterSignin } from "../../styled/common/common.styled";
 import { useState } from "react";
 import { signIn } from "../../api";
-import * as S from "./SigninPage.styled";
+import * as S from "./SignInPage.styled";
+import { WrapperRegisterSignIn } from "../../styled/common/common.styled";
 
-export default function SigninPage({ login }) {
+export default function SignInPage({ login }) {
   const [loginData, setLoginData] = useState({ login: "", password: "" });
 
   const handleInputChange = (e) => {
-    //Ф-ия, чтобы обновлять состояние с новыми введёнными в поля ввода данными
-    const { name, value } = e.target; // Извлекаем имя поля и его значение, см. инпут ниже, name = "login", а в value хранится наше значение поля ввода
+    
+    const { name, value } = e.target; 
 
     setLoginData({
-      ...loginData, // Копируем текущие данные из состояния
-      [name]: value, // Обновляем нужное поле
+      ...loginData, 
+      [name]: value, 
     });
   };
   const handleLogin = async (e) => {
@@ -26,7 +26,7 @@ export default function SigninPage({ login }) {
   };
 
   return (
-    <WrapperRegisterSignin>
+    <WrapperRegisterSignIn>
       <S.ContainerSignIn>
         <S.Modal>
           <S.ModalBlock>
@@ -63,6 +63,6 @@ export default function SigninPage({ login }) {
           </S.ModalBlock>
         </S.Modal>
       </S.ContainerSignIn>
-    </WrapperRegisterSignin>
+    </WrapperRegisterSignIn>
   );
 }

@@ -1,22 +1,26 @@
 import { createContext, useState } from "react";
-import { useNavigate } from "react-router-dom";
-import { AppRoutes } from "../lib/approutes";
 
-export const TasksContext = createContext(null);
+function getTaskFromLocalStorage() {
+  try {
+    return JSON.parse(localStorage.getItem("task"));
+  } catch (error) {
+    console.log(error);
+    return null;
+  }
+}
 
-export const TasksProvider = ({ children }) => {
-  let navigate = useNavigate();
+export const TaskContext = createContext(null);
+export const TaskProvider = ({ children }) => {
+  const [task, setTask] = useState(getTaskFromLocalStorage());
 
-  const [tasks, setTasks] = useState(null);
-
-  const getTasks = (cards) => {
-    setTasks(cards);
-    navigate(AppRoutes.HOME);
-  };
-
+ 
+  const putDownTask = (task) => {
+    setTask(task);
+    localStorage.setItem("task", JSON.stringify(task));
+  }
   return (
-    <TasksContext.Provider value={{ tasks, setTasks, getTasks }}>
+    <TaskContext.Provider value={{ task, putDownTask }}>
       {children}
-    </TasksContext.Provider>
+    </TaskContext.Provider>
   );
 };

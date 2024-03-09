@@ -5,7 +5,7 @@ import { useState, useEffect } from "react";
 import Header from "../../components/Header/Header";
 import { Outlet } from "react-router-dom";
 import { getTodos } from "../../api";
-import { Wrapper } from "../../styled/common/Common.styled";
+import { Wrapper } from "../../styled/common/common.styled";
 
 const statusList = [
   "Без статуса",
@@ -21,7 +21,7 @@ function MainPage({ user }) {
   
   useEffect(() => {
     getTodos({ token: user.token }).then((todos) => {
-      //console.log(todos); // тут приходят tasks 47
+
       setCards(todos.tasks);
         setIsLoading(false);
     }).catch(() => {
@@ -30,7 +30,7 @@ function MainPage({ user }) {
   }, [user]);
  
   function addCard() {
-    // Логика добавления карточки
+
     const newCard = {
       date: "30.10.23",
       id: cards.length + 1,
@@ -42,10 +42,9 @@ function MainPage({ user }) {
   }
   return (
     <Wrapper>
-      {/* pop-up start*/}
+
       <Outlet />
 
-      {/* pop-up end*/}
 
       <Header addCard={addCard} />
       {isLoading ? (
@@ -62,7 +61,7 @@ function MainPage({ user }) {
         </MainContent>
       )}
     </Wrapper>
-    // </>
+
   );
 }
 

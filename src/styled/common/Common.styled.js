@@ -23,7 +23,7 @@ max-width: 100%;
   overflow: hidden;
   background-color: #F1F1F1;
 `;
-export const WrapperRegisterSignin = styled.div`
+export const WrapperRegisterSignIn = styled.div`
 
 width: 100%;
   height: 100%;
