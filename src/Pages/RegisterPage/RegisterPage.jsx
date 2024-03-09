@@ -1,10 +1,9 @@
 import * as S from "./RegisterPage.styled.js";
-
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import { registration } from "../../api.js";
-import { WrapperRegisterSignIn } from "../../styled/common/common.styled.js";
 import { appRoutes } from "../../lib/approutes.js";
+import { WrapperRegisterSignIn } from "../../styled/common/common.styled.js";
 
 export default function RegisterPage({register}) {
   const [registerData, setRegisterData] = useState({

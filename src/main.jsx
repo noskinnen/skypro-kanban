@@ -1,15 +1,19 @@
-import React from 'react'
-import ReactDOM from 'react-dom/client'
-import App from './App.jsx'
-import { UserProvider } from "./contexts/user.jsx";
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import App from './App.jsx';
 import { BrowserRouter } from 'react-router-dom';
+import { UserProvider } from './contexts/user.jsx';
+import { TaskProvider } from './contexts/tasks.jsx';
 
-ReactDOM.createRoot(document.getElementById("root")).render(
+
+ReactDOM.createRoot(document.getElementById('root')).render(
+  <BrowserRouter>
   <React.StrictMode>
-    <BrowserRouter>
-      <UserProvider>
-        <App />
-      </UserProvider>
-    </BrowserRouter>
+    <TaskProvider>
+    <UserProvider>
+    <App />
+    </UserProvider>
+    </TaskProvider>
   </React.StrictMode>
-);
+  </BrowserRouter>
+)

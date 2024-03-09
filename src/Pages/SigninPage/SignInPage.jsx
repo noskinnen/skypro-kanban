@@ -1,17 +1,17 @@
 import "../../App.css";
-import { appRoutes } from "../../lib/approutes";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import { signIn } from "../../api";
-import * as S from "./SignInPage.styled";
+import * as S from "./SigninPage.styled";
+import { appRoutes } from "../../lib/approutes";
 import { WrapperRegisterSignIn } from "../../styled/common/common.styled";
 
-export default function SignInPage({ login }) {
+export default function SigninPage({ login }) {
   const [loginData, setLoginData] = useState({ login: "", password: "" });
 
   const handleInputChange = (e) => {
-    
-    const { name, value } = e.target; 
+   
+    const { name, value } = e.target;
 
     setLoginData({
       ...loginData, 
