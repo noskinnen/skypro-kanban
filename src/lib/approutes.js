@@ -1,8 +1,8 @@
-export const AppRoutes = {
+export const appRoutes = {
     MAIN: "/",
-    NOT_FOUND: "*",
-    EXIT: "/exit",
-    CARD: "/card",
+    TASK: "/task/:id",
+    SIGNIN: "/signin",
     REGISTER: "/register",
-    LOGIN: "/login"
+    EXIT: "/exit",
+    NOT_FOUND_404: "*",
 }
