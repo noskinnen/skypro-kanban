@@ -72,7 +72,9 @@ export default function RegisterPage({register}) {
               <Link to={appRoutes.SIGNIN}>
                 <S.ModalFormGroup>
                   <S.P>
-                    Уже есть аккаунт? <S.A>Войдите здесь</S.A>
+                    Уже есть аккаунт? 
+                    <S.A>Войдите здесь</S.A>
+                    
                   </S.P>
                 </S.ModalFormGroup>
               </Link>
