@@ -5,6 +5,7 @@ import { registration } from "../../api.js";
 import { appRoutes } from "../../lib/approutes.js";
 import { WrapperRegisterSignIn } from "../../styled/common/common.styled.js";
 
+
 export default function RegisterPage({register}) {
   const [registerData, setRegisterData] = useState({
     name: "",

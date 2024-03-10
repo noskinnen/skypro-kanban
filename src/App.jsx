@@ -3,7 +3,7 @@ import "./App.css";
 import { appRoutes } from "./lib/approutes";
 import MainPage from "./Pages/MainPage/MainPage";
 import NotFoundPage404 from "./Pages/NotFoundPage/NotFoundPage";
-import SigninPage from "./Pages/SigninPage/SignInPage";
+import SignInPage from "./Pages/SigninPage/SignInPage";
 import RegisterPage from "./Pages/RegisterPage/RegisterPage";
 import PrivateRoute from "./Components/PrivateRoute/PrivateRoute";
 import TaskPage from "./Pages/TaskPage/TaskPage";
@@ -18,7 +18,7 @@ export default function App() {
           <Route  path={appRoutes.EXIT} element={<ExitPage />} />
           </Route>
       </Route>
-      <Route  path={appRoutes.SIGNIN} element={<SigninPage  />} />
+      <Route  path={appRoutes.SIGNIN} element={<SignInPage  />} />
       <Route path={appRoutes.REGISTER} element={<RegisterPage />} />
       <Route path={appRoutes.NOT_FOUND_404} element={<NotFoundPage404 />} />
     </Routes>
