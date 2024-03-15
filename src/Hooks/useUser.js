@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { UserContext } from "../contexts/user";
-import { TaskContext } from "../contexts/task";
+import { TaskContext } from "../contexts/tasks";
+
 
 export function useUser() {
     return useContext(UserContext)

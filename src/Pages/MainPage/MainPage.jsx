@@ -5,6 +5,7 @@ import { useState, useEffect } from "react";
 import Header from "../../components/Header/Header";
 import { Outlet } from "react-router-dom";
 import { getTodos } from "../../api";
+import { useUser } from "../../hooks/useUser";
 import { Wrapper } from "../../styled/common/common.styled";
 
 const statusList = [
@@ -15,13 +16,12 @@ const statusList = [
   "Готово",                                                                                                                                                                                                                                                                            
 ];
 
-function MainPage({ user }) {
+function MainPage() {
   const [cards, setCards] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
-  
+  const {user} = useUser()
   useEffect(() => {
     getTodos({ token: user.token }).then((todos) => {
-
       setCards(todos.tasks);
         setIsLoading(false);
     }).catch(() => {
@@ -30,7 +30,6 @@ function MainPage({ user }) {
   }, [user]);
  
   function addCard() {
-
     const newCard = {
       date: "30.10.23",
       id: cards.length + 1,
@@ -42,9 +41,7 @@ function MainPage({ user }) {
   }
   return (
     <Wrapper>
-
       <Outlet />
-
 
       <Header addCard={addCard} />
       {isLoading ? (
@@ -61,8 +58,6 @@ function MainPage({ user }) {
         </MainContent>
       )}
     </Wrapper>
-
   );
 }
-
 export default MainPage;
