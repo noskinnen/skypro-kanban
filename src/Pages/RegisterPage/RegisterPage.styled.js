@@ -93,9 +93,6 @@ export const AButton = styled.a`
   width: 100%;
   height: 100%;
   color: #FFFFFF;
-  /* display: flex;
-  align-items: center;
-  justify-content: center; */
   text-decoration: none;
   cursor: pointer;
   font-family: "Roboto", sans-serif;
@@ -111,7 +108,7 @@ export const P = styled.p`
   line-height: 150%;
   letter-spacing: -0.14px;
 `;
-export const A = styled.a`
+export const Span = styled.span`
   text-decoration: underline;
   font-family: "Roboto", sans-serif;
   cursor: pointer;

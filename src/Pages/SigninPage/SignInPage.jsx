@@ -1,31 +1,34 @@
 import "../../App.css";
-import { Link } from "react-router-dom";
+import { appRoutes } from "../../lib/approutes";
+import { Link, useNavigate } from "react-router-dom";
+import { WrapperRegisterSignin } from "../../styled/common/common.styled";
 import { useState } from "react";
 import { signIn } from "../../api";
-import * as S from "./SignInPage.styled";
-import { appRoutes } from "../../lib/approutes";
-import { WrapperRegisterSignIn } from "../../styled/common/common.styled";
+import * as S from "./SigninPage.styled";
+import { useUser } from "../../hooks/useUser";
 
-export default function SignInPage({ login }) {
+export default function SigninPage() {
+  const {login} = useUser();
+  const navigate = useNavigate();
   const [loginData, setLoginData] = useState({ login: "", password: "" });
 
-  const handleLogin = async (e) => {
-    e.preventDefault();
-    await signIn(loginData).then((data) => {
-      login(data.user);
-    });
-  };
-
   const handleInputChange = (e) => {
-    const { name, value } = e.target;
+    const { name, value } = e.target; 
     setLoginData({
       ...loginData, 
       [name]: value, 
     });
   };
+  const handleLogin = async (e) => {
+    e.preventDefault();
+    await signIn(loginData).then((data) => {
+      login(data.user);
+      navigate(appRoutes.MAIN);
+    });
+  };
 
   return (
-    <WrapperRegisterSignIn>
+    <WrapperRegisterSignin>
       <S.ContainerSignIn>
         <S.Modal>
           <S.ModalBlock>
@@ -48,7 +51,7 @@ export default function SignInPage({ login }) {
                 placeholder="Пароль"
               ></S.ModalInput>
 
-              <S.ModalBtnEnter
+              <S.ModalBtnEnter 
                 id="btnEnter"
                 onClick={handleLogin}>
               Войти  
@@ -56,13 +59,12 @@ export default function SignInPage({ login }) {
 
               <S.ModalFormGroup>
             Нужно зарегистрироваться?
-                <Link to={appRoutes.REGISTER}>
-                  <S.ModalFormGroupA>Регистрируйтесь здесь</S.ModalFormGroupA></Link>
+                <Link to={appRoutes.REGISTER}><S.ModalFormGroupA>Регистрируйтесь здесь</S.ModalFormGroupA></Link>
               </S.ModalFormGroup>
             </S.ModalFormLogin>
           </S.ModalBlock>
         </S.Modal>
       </S.ContainerSignIn>
-    </WrapperRegisterSignIn>
+    </WrapperRegisterSignin>
   );
 }
