@@ -4,7 +4,6 @@ import NotFoundPage404 from "./Pages/NotFoundPage/NotFoundPage";
 import RegisterPage from "./Pages/RegisterPage/RegisterPage";
 import PrivateRoute from "./Components/PrivateRoute/PrivateRoute";
 import TaskPage from "./Pages/TaskPage/TaskPage";
-import ExitPage from "./Pages/ExitPage/ExitPage"
 import { Routes, Route } from "react-router-dom";
 import EditTaskPage from "./pages/EditTaskPage/EditTaskPage";
 import WatchTaskPage from "./Pages/WatchTaskPage/WatchTaskPage";
@@ -19,7 +18,7 @@ export default function App() {
           <Route path={appRoutes.TASK} element={<TaskPage />} />
           <Route path={appRoutes.WATCHTASK} element={<WatchTaskPage />} />
           <Route path={appRoutes.EDITTASK} element={<EditTaskPage />} />
-          <Route  path={appRoutes.EXIT} element={<ExitPage />} />
+          <Route  path={appRoutes.EXIT} element={<SignInPage />} />
           </Route>
       </Route>
       <Route path={appRoutes.SIGNIN} element={<SignInPage />} />
